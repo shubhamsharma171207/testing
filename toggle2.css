@@ -1,0 +1,69 @@
+/* Additional styling for the color mode toggle */
+.btn-container {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    padding: 10px;
+    z-index: 10;
+}
+
+.switch {
+    display: inline-block;
+    position: relative;
+}
+
+.switch input {
+    display: none;
+}
+
+.btn-color-mode-switch-inner {
+    display: block;
+    width: 80px; /* Increased width */
+    height: 40px; /* Increased height to maintain proportions */
+    background-color: #ddd;
+    border-radius: 40px; /* Keep the rounded shape */
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-color-mode-switch-inner:before {
+    content: attr(data-off);
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #333;
+}
+
+.btn-color-mode-switch-inner:after {
+    content: attr(data-on);
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #fff;
+}
+
+.switch input:checked + .btn-color-mode-switch-inner {
+    background-color: #4caf50;
+}
+
+.switch input:checked + .btn-color-mode-switch-inner:before {
+    content: attr(data-on);
+    left: auto;
+    right: 5px;
+}
+
+.switch input:checked + .btn-color-mode-switch-inner:after {
+    content: attr(data-off);
+    left: 5px;
+    right: auto;
+}
+
+.switch input:checked + .btn-color-mode-switch-inner:before,
+.switch input:checked + .btn-color-mode-switch-inner:after {
+    transition: all 0.3s ease;
+}
